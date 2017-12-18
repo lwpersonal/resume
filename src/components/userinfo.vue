@@ -1,5 +1,5 @@
 <template>
-
+<section class="one" :style="boxSty"></section>
 </template>
 
 <script lang="ts">
@@ -12,7 +12,7 @@ import { Prop } from 'vue-property-decorator'
   }
 })
 
-export default class App extends Vue {
+export default class UserInfo extends Vue {
   app: any = this.$store.state.AppVuex
   @Prop()
 
@@ -23,6 +23,12 @@ export default class App extends Vue {
   }
   destroyed () {
   }
+  get boxSty() {
+    return {
+      width: this.app.scrollWid + 'px',
+      height: this.app.scrollHei + 'px'
+    }
+  }
   _upData(data: any) {
     // 更新Vuex数据状态
     this.$store.commit('_appUpData', data) }
@@ -31,4 +37,6 @@ export default class App extends Vue {
 
 <style lang="stylus" scoped>
 @import '../static/css/common.styl'
+.one
+  background pink
 </style>
