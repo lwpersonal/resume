@@ -9,6 +9,7 @@
   <div id="app" >
     <!-- 相对屏幕固定的元素 -->
     <section class="fixed-box">
+      <my-top />
       <my-nav />
     </section>
     <!-- 路由渲染出口 -->
@@ -23,11 +24,13 @@ import store from './router/vuex'
 import { throttle } from 'lodash'
 
 import Nav from './components/nav.vue'
+import Top from './components/top.vue'
 
 @Component({
   store,
   components: {
-    'my-nav': Nav
+    'my-nav': Nav,
+    'my-top': Top
   }
 })
 export default class App extends Vue {
@@ -71,7 +74,9 @@ export default class App extends Vue {
 </script>
 
 <style lang="stylus">
-body {
-	overflow-y: hidden;
+body
+	overflow-y hidden
+.fixed-box{
+  width 100%
 }
 </style>
