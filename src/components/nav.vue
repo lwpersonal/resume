@@ -10,6 +10,7 @@
     aria-hidden="true">
       <use :xlink:href="item.icon"></use>
     </svg>
+    <p class="prompt">{{item.name}}</p>
   </div>
   
 </section>
@@ -59,8 +60,8 @@ export default class Nav extends Vue {
     position relative
     display block
     transition .5s all ease
-    width 30px
-    height 30px
+    width 36px
+    height 36px
     margin 5px 0 0 0
     border-radius 50%
     .icon-arc
@@ -77,15 +78,36 @@ export default class Nav extends Vue {
       color rgba(0,0,0,0)
       background rgba(255,255,255,0.5)
     .select
-      width 20px
-      height 20px
+      width 26px
+      height 26px
       color #fff
+      background rgba(0,0,0,0.8)
+    .prompt
+      transition .3s all ease
+      position absolute
+      z-index 2 // 可以去掉过渡抖动
+      opacity 0
+      width 0
+      right 46px
+      top 50%
+      -webkit-backface-visibility: hidden;
+      transform translate3d(0, -52%, 0)
+      padding 2px 0
+      border-radius 3px
+      font-size 14px
+      line-height 20px
+      text-align center
+      color #fff
+      white-space nowrap
       background rgba(0,0,0,0.8)
   .icon-box:hover
     .icon-arc
-      width 20px
-      height 20px
+      width 26px
+      height 26px
       color #fff
       background rgba(0,0,0,0.8)
+    .prompt
+      opacity 1
+      width 80px
 
 </style>
