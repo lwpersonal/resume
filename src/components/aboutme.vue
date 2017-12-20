@@ -1,5 +1,7 @@
 <template>
-<section class="one" :style="boxSty"></section>
+<section class="box" :style="boxSty">
+  <div :style="{height: app.scrollWid > 450 ? '76px' : '50px'}"></div>
+</section>
 </template>
 
 <script lang="ts">
@@ -37,6 +39,6 @@ export default class AboutMe extends Vue {
 
 <style lang="stylus" scoped>
 @import '../static/css/common.styl'
-.one
-  background blue
+.box
+  background url(../static/img/overlay.png), linear-gradient(45deg, #7d8631, #578532, #338445)
 </style>

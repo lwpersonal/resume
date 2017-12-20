@@ -1,7 +1,7 @@
 export default {
   state: {
     index: 0, // 当前是第几屏
-    all: 3, // 最后一个的索引
+    all: 5, // 最后一个的索引
     scrollWid: false, // 可视区域大小
     scrollHei: false,
     nav: [
@@ -19,13 +19,15 @@ export default {
       birthday: '1995-06-02',
       nation: '汉',
       jobIntension: 'Web 前端工程师',
+      more: '喜欢设计、热爱前端，我无法用杠杆去撬动地球，但是却可以用canvas画出世界。',
+      title: '资之深，则取之左右逢其源。'
     },
     moreInfo: {
       // 更多信息
       phone: 17648253663,
       Email: '1521624684@qq.com',
-      blog: 'blog.csdn.net/qq_25243451',
-      GitHub: 'github.com/lwpersonal'
+      blog: 'http://blog.csdn.net/qq_25243451',
+      GitHub: 'https://github.com/lwpersonal'
     },
     skill: {
       // 专业技能

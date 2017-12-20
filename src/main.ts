@@ -11,7 +11,7 @@ import '../src/static/iconfont/iconfont.js'
 // 默认css样式
 import './../src/static/css/defaultStyle.css'
 // 响应式布局，使用js动态改变html=>font-size大小
-import './common/flexible'
+// import './common/flexible'
 
 /* eslint-disable no-new */
 new Vue({

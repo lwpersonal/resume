@@ -1,5 +1,5 @@
 <template>
-<section class="nav">
+<nav class="nav">
   <div 
   class="icon-box" 
   v-for="(item, index) in app.nav"
@@ -13,7 +13,7 @@
     <p class="prompt">{{item.name}}</p>
   </div>
   
-</section>
+</nav>
 </template>
 
 <script lang="ts">
@@ -84,6 +84,7 @@ export default class Nav extends Vue {
       background rgba(0,0,0,0.8)
     .prompt
       transition .3s all ease
+      overflow hidden
       position absolute
       z-index 2 // 可以去掉过渡抖动
       opacity 0

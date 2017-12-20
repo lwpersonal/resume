@@ -14,7 +14,7 @@ import { Prop } from 'vue-property-decorator'
   }
 })
 
-export default class Skill extends Vue {
+export default class Experience extends Vue {
   app: any = this.$store.state.AppVuex
   @Prop()
 
@@ -40,5 +40,5 @@ export default class Skill extends Vue {
 <style lang="stylus" scoped>
 @import '../static/css/common.styl'
 .box
-  background url(../static/img/overlay.png), linear-gradient(45deg, #246a68, #564871, #655361)
+  background url(../static/img/overlay.png), linear-gradient(45deg, #338445, #246a68, #564871)
 </style>

@@ -28,15 +28,23 @@ body, p, ul, ol, li, h1, h2, h3, h4, h5, h6, dl, dd, dt, image, input, textarea,
   padding: 0;
   word-break: break-all;
   /*可以在单词内换行*/ }
+@media screen and (max-width: 450px) {
+  /* 14px */
+  html { font-size: 87.5%; }
+}
+
+@media screen and (min-width: 450px) {
+  /*16px100%*/
+  html { font-size: 100%; }
+}
 
 body {
   font-size: 1rem;
-  /*14px87.5%*/
-  font-family: Tahoma,"microsoft yahei",sans-serif,"iconfont";
+  font-family: Tahoma,"microsoft yahei",sans-serif;
   -webkit-font-smoothing: antialiased;
   /*抗锯齿*/
   -moz-osx-font-smoothing: grayscale;
-  color: #666;
+  color: #f2f2f2;
   -webkit-tap-highlight-color: transparent;
   /*去除移动端点击事件出现选中框*/
   -webkit-touch-callout: none;
@@ -85,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   cursor: pointer;
-  color: #666;
+  color: #f2f2f2;
   text-decoration: none;
   /*大部分页面中的链接没有下划线*/
   outline: none; }

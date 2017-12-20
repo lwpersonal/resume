@@ -10,7 +10,8 @@
     <!-- 相对屏幕固定的元素 -->
     <section class="fixed-box">
       <my-top />
-      <my-nav />
+      <my-nav v-if="app.scrollWid > 450"/>
+      <my-footer />
     </section>
     <!-- 路由渲染出口 -->
     <router-view v-if="app.scrollWid"/>
@@ -25,12 +26,14 @@ import { throttle } from 'lodash'
 
 import Nav from './components/nav.vue'
 import Top from './components/top.vue'
+import Footer from './components/footer.vue'
 
 @Component({
   store,
   components: {
     'my-nav': Nav,
-    'my-top': Top
+    'my-top': Top,
+    'my-footer': Footer
   }
 })
 export default class App extends Vue {
@@ -55,10 +58,10 @@ export default class App extends Vue {
 
     if (detail > 0 && this.app.index > 0) { // 当滑轮向上滚动时
       this._upData({ index: this.app.index - 1 })
-      setTimeout( () => { window.addEventListener('mousewheel', this.scrollFn) }, 550)
+      setTimeout( () => { window.addEventListener('mousewheel', this.scrollFn) }, 600)
     } else if (detail < 0 && this.app.index < this.app.all) { // 当滑轮向下滚动时
       this._upData({ index: this.app.index + 1 })
-      setTimeout( () => { window.addEventListener('mousewheel', this.scrollFn) }, 550) 
+      setTimeout( () => { window.addEventListener('mousewheel', this.scrollFn) }, 600) 
     } else {
       window.addEventListener('mousewheel', this.scrollFn) }
   }

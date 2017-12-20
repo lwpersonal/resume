@@ -3,11 +3,15 @@
 
   <my-first />
 
-  <about-me />
-
   <user-info />
 
   <my-skill />
+
+  <my-experience />
+
+  <my-demo />
+  
+  <about-more />
 
 </section>
 </template>
@@ -20,14 +24,18 @@ import { Watch } from 'vue-property-decorator'
 import Me from './me.vue'
 import userInfo from './userinfo.vue'
 import Skill from './skill.vue'
-import AboutMe from './aboutme.vue'
+import Experience from './experience.vue'
+import Demo from './demo.vue'
+import AboutMore from './aboutme.vue'
 
 @Component({
   components: {
     'my-first': Me,
     'user-info': userInfo,
     'my-skill': Skill,
-    'about-me': AboutMe
+    'my-experience': Experience,
+    'my-demo': Demo,
+    'about-more': AboutMore
   }
 })
 
