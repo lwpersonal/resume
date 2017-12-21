@@ -40,5 +40,7 @@ export default class Experience extends Vue {
 <style lang="stylus" scoped>
 @import '../static/css/common.styl'
 .box
+  overflow hidden
+  background url(../static/img/overlay.png) #246a68
   background url(../static/img/overlay.png), linear-gradient(45deg, #338445, #246a68, #564871)
 </style>

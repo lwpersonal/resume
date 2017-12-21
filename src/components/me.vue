@@ -48,6 +48,8 @@ export default class Me extends Vue {
 <style lang="stylus" scoped>
 @import '../static/css/common.styl'
 .box
+  overflow hidden
+  background url(../static/img/overlay.png) #85505f
   background url(../static/img/overlay.png), linear-gradient(45deg, #655361, #85505f, #8f454f)
   .content
     text-align center
@@ -56,14 +58,14 @@ export default class Me extends Vue {
         display block
         width 100px
         height 100px
-        margin 30px auto 0 auto
+        margin 10px auto 0 auto
         border-radius 50%
     @media screen and (min-width 450px)
       .my-img
         display block
         width 150px
         height 150px
-        margin 50px auto 0 auto
+        margin 30px auto 0 auto
         border-radius 50%
     .title
       margin 30px 0 0 0

@@ -40,5 +40,7 @@ export default class Demo extends Vue {
 <style lang="stylus" scoped>
 @import '../static/css/common.styl'
 .box
+  
+  background url(../static/img/overlay.png) #338445
   background url(../static/img/overlay.png), linear-gradient(45deg, #578532, #338445, #246a68)
 </style>

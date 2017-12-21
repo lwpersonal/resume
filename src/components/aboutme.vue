@@ -40,5 +40,7 @@ export default class AboutMe extends Vue {
 <style lang="stylus" scoped>
 @import '../static/css/common.styl'
 .box
+  overflow hidden
+  background url(../static/img/overlay.png) #578532
   background url(../static/img/overlay.png), linear-gradient(45deg, #7d8631, #578532, #338445)
 </style>

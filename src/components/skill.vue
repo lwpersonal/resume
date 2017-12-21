@@ -40,5 +40,7 @@ export default class Skill extends Vue {
 <style lang="stylus" scoped>
 @import '../static/css/common.styl'
 .box
+  overflow hidden
+  background url(../static/img/overlay.png) #564871
   background url(../static/img/overlay.png), linear-gradient(45deg, #246a68, #564871, #655361)
 </style>
