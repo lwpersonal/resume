@@ -2,11 +2,11 @@
  * @Author: AI
  * @Date: 2017-10-11 21:02:36
  * @Last Modified by: AI
- * @Last Modified time: 2017-12-17 23:59:09
+ * @Last Modified time: 2017-12-20 18:39:49
  * @describe
  */
 <template>
-  <div id="app" >
+  <div id="app">
     <!-- 相对屏幕固定的元素 -->
     <section class="fixed-box">
       <my-top />
@@ -23,6 +23,7 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 import store from './router/vuex'
 import { throttle } from 'lodash'
+import Version from './common/version'
 
 import Nav from './components/nav.vue'
 import Top from './components/top.vue'
@@ -42,8 +43,7 @@ export default class App extends Vue {
   scrollFn: any = throttle(this.scroll, 30)
   // 钩子函数
   mounted () {
-    console.log(this.app)
-    this._upData({ scrollWid: window.innerWidth, scrollHei: window.innerHeight })
+    this._upData({ scrollWid: window.innerWidth, scrollHei: window.innerHeight, version: Version })
     window.addEventListener('resize', this.resizeFn)
     window.addEventListener('mousewheel', this.scrollFn)
   }
@@ -58,15 +58,14 @@ export default class App extends Vue {
 
     if (detail > 0 && this.app.index > 0) { // 当滑轮向上滚动时
       this._upData({ index: this.app.index - 1 })
-      setTimeout( () => { window.addEventListener('mousewheel', this.scrollFn) }, 600)
+      setTimeout( () => { window.addEventListener('mousewheel', this.scrollFn) }, 500)
     } else if (detail < 0 && this.app.index < this.app.all) { // 当滑轮向下滚动时
       this._upData({ index: this.app.index + 1 })
-      setTimeout( () => { window.addEventListener('mousewheel', this.scrollFn) }, 600) 
+      setTimeout( () => { 
+        window.addEventListener('mousewheel', this.scrollFn) }, 500) 
     } else {
       window.addEventListener('mousewheel', this.scrollFn) }
   }
-  _up() {}
-  _down() {}
   resize (e) {
     e = e || window.event
     this._upData({ scrollWid: e.currentTarget.innerWidth, scrollHei: e.currentTarget.innerHeight }) }
@@ -79,7 +78,7 @@ export default class App extends Vue {
 <style lang="stylus">
 body
 	overflow-y hidden
-.fixed-box{
+.fixed-box {
   width 100%
 }
 </style>
