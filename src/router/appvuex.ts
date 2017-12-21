@@ -4,6 +4,7 @@ export default {
     all: 5, // 最后一个的索引
     scrollWid: false, // 可视区域大小
     scrollHei: false,
+    version: false,
     nav: [
       { name: '首页', icon: '#icon-tubiao115' },
       { name: '我的信息', icon: '#icon-user1' },
@@ -83,13 +84,46 @@ export default {
       },
       low: [ 'Git', '微信小程序', 'NodeJs', 'Http协议', 'PhotoShop' ]
     },
-    school: {
-      // 教育经历
-      name: '内蒙古科技大学',
-      time: '2013.09-2017.07',
-      major: '软件工程（本科）',
-      import: [ '网页设计与制作', '高级网站开发', '计算机网络', '软件工程', '算法分析', '数据库原理' ]
-    }
+    infoArr: [
+      {
+        icon: '#icon-shengri',
+        title: '生日/1995.6.2',
+        id: 'birthday',
+        content: [
+          { icon: '', content: '生日' }
+        ]
+      },
+      {
+        icon: '#icon-xueli',
+        title: '学历/本科',
+        id: 'Education',
+        content: [
+          {
+            // 教育经历
+            name: '内蒙古科技大学',
+            time: '2013.09-2017.07',
+            major: '软件工程（本科）',
+            import: [ '网页设计与制作', '高级网站开发', '计算机网络', '软件工程', '算法分析', '数据库原理' ]
+          }
+        ]
+      },
+      {
+        icon: '#icon-zhuangtai',
+        title: '工作/Web 前端',
+        id: 'job',
+        content: [
+          { icon: '', content: '工作' }
+        ]
+      },
+      {
+        icon: '#icon-zuobiao',
+        title: '坐标/北京',
+        id: 'location',
+        content: [
+          { icon: '', content: '坐标' }
+        ]
+      },
+    ]
   },
   mutations: {
     /**
