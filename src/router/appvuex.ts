@@ -32,56 +32,8 @@ export default {
     },
     skill: {
       // 专业技能
-      Html: {
-        degree: 90,
-        tag: [ 'Html3', '语义化' ]
-      },
-      CSS: {
-        degree: 90,
-        tag: [ 'CSS3', '响应式' ]
-      },
-      JavaScript: {
-        degree: 85,
-        tag: [ '模块化', '维护性强' ]
-      },
-      height: {
-        jQuery: {
-          degree: 85,
-          tag: [ ]
-        },
-        Vue2: {
-          bold: true,
-          degree: 85,
-          tag: [ ]
-        },
-        ES6: {
-          bold: true,
-          degree: 80,
-          tag: [ ]
-        },
-      },
-      middle: {
-        TypeScript : {
-          degree: 85,
-          tag: [ ]
-        },
-        ReactNative: {
-          degree: 75,
-          tag: [ ]
-        },
-        webpack: {
-          degree: 80,
-          tag: [ ]
-        },
-        stylus: {
-          degree: 85,
-          tag: [ ]
-        },
-        Sass: {
-          degree: 85,
-          tag: [ ]
-        },
-      },
+      height: [ 'Html', 'CSS', 'JavaScript', 'jQuery', 'Vue2', 'ES6' ],
+      middle: [ 'TypeScript', 'ReactNative', 'webpack', 'stylus', 'Sass' ],
       low: [ 'Git', '微信小程序', 'NodeJs', 'Http协议', 'PhotoShop' ]
     },
     infoArr: [

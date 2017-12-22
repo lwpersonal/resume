@@ -101,8 +101,7 @@
           width 100%
           height 100%
           border-radius 50%
-          // border 3px solid rgba(255,255,255,0.1)
-          box-shadow: 0 0 0 2px rgba(255,255,255,.1)
+          border 2px solid rgba(255,255,255,0.1)
         .box-animate::after
           content ''
           position absolute
@@ -115,8 +114,7 @@
           width 100%
           height 100%
           border-radius 50%
-          // border 3px solid rgba(255,255,255,0.1)
-          box-shadow: 0 0 0 2.5px rgba(255,255,255,.1)
+          border 2.5px solid rgba(255,255,255,0.1)
         .box-animate:hover
           .item
             transform scale(.95)
