@@ -41,6 +41,7 @@
   opacity 0
   transform translate(0, -50%)
 }
+
 .box
   overflow hidden
   background url(../static/img/overlay.png) #655361
