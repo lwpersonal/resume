@@ -13,6 +13,12 @@ import './../src/static/css/defaultStyle.css'
 // 响应式布局，使用js动态改变html=>font-size大小
 // import './common/flexible'
 
+// 轮播图
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAwesomeSwiper)
+// 轮播图组件样式
+import 'swiper/dist/css/swiper.css'
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
