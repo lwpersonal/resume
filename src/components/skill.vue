@@ -9,48 +9,86 @@
     .content-title
       font-size 1.4rem
     .content-box
-      @media screen and (min-width 600px) {
-        display flex
-      }
-      max-width 800px
       margin 40px auto 0 auto
+      @media screen and (max-width 450px)
+        padding 15px 0
+      @media screen and (min-width 450px)
+        padding 15px 20px
+      // background rgba(255,255,255,0.1)
       .skill-box
-        margin 0 10px 0 20px
-        max-width 240px
-        @media screen and (min-width 600px) {
-          flex 1
-          margin 0 20px 0 40px
+        position relative
+        width 100%
+      skillBox() {
+        position absolute
+        cursor pointer
+        transition all ease-out 1s
+        top 0
+        width 65%
+        padding 20px
+        border-radius 3px
+        text-align left
+        color #333
+      }
+      .skill-box_0
+        skillBox()
+        transform translate(-50%, 0)
+        z-index 10
+        left 50%
+        background rgba(255,255,255,0.5)
+        @media screen and (max-width 450px) {
+          padding 10px 0 0 0
         }
-        @media screen and (max-width 600px) {
-          margin 0 auto
+        @media screen and (min-width 450px) {
+          padding 30px 0 0 0
         }
-      .skill-info
-        margin 0 20px 0 10px
-        max-width 240px
-        background orange
-        @media screen and (min-width 600px) {
-          flex 1
-          margin 0 20px 0 40px
+      .skill-box_1
+        z-index 8
+        skillBox()
+        transform translate(-95%, 0) scale(.8)
+        left 100%
+        opacity 0.4
+        background rgba(255,255,255,0.3)
+      .skill-box_2
+        skillBox()
+        z-index 9
+        transform translate(-10%, 0) scale(.7)
+        left 0
+        opacity 0.2
+        background rgba(255,255,255,0.3)
+      .item
+        margin 0 auto
+        @media screen and (max-width 450px) {
+          width 90%
+          line-height 25px
+          padding 0 0 15px 0
         }
-        @media screen and (max-width 600px) {
-          margin 0 auto
+        @media screen and (min-width 450px) {
+          width 70%
+          line-height 30px
+          padding 0 0 30px 0
         }
-      .inner
-        //
+      .item-title
+        font-size 1.3rem
+      
 </style>
 
 <template>
 <section class="box" :style="boxSty">
-  <div :style="{height: app.scrollWid > 450 ? '76px' : '50px'}"></div>
+  <div :style="{height: app.scrollWid > 450 ? '76px' : '10px'}"></div>
   <section class="content">
     <h3 class="content-title">技能栈</h3>
     <div class="content-box">
-      <section class="skill-box">
-        <ul class="inner">
-          <li class="height-item">ksjd</li>
-        </ul>
-      </section>
-      <section class="skill-info">dff</section>
+      <div class="skill-box">
+        <section 
+        :style="{minHeight: app.scrollHei - 300 + 'px'}"
+        @click="nowIndex = indexL"
+        v-for="(itemL, keyL, indexL) in app.skill"
+        :class="className(indexL)">
+          <p class="item" v-for="(item, key, index) in itemL"><span v-if="typeof key !== 'number'" class="item-title">{{key}}：</span>{{item}}
+          </p>
+        </section>
+      </div>
+      
     </div>
   </section>
 </section>
@@ -63,15 +101,17 @@ import { Prop } from 'vue-property-decorator'
 
 @Component({
   components: {
+  },
+  filters: {
   }
 })
 
 export default class Skill extends Vue {
   app: any = this.$store.state.AppVuex
+  nowIndex: number = 0
   @Prop()
 
   created () {
-    // render前得到router的参数
   }
   mounted () {
   }
@@ -83,9 +123,22 @@ export default class Skill extends Vue {
       height: this.app.scrollHei + 'px'
     }
   }
+  className(index) {
+    const len = 3
+    // [...Array(10).keys()] TS会转义错误
+    let arr: Array<string> = Object.keys(Array(len + 1).join('.'))
+    const lastArr: Array<string> = arr.splice(this.nowIndex)
+
+    arr = lastArr.concat(arr) // 根据当前index重新排序数组
+    // 得到对应元素所在的位置，返回对应的class
+    const resIndex: number = arr.indexOf(index + '')
+
+    return 'skill-box_' + resIndex
+  }
   _upData(data: any) {
     // 更新Vuex数据状态
     this.$store.commit('_appUpData', data) }
 }
 </script>
+
 
