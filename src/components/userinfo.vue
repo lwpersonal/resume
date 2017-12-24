@@ -35,11 +35,11 @@
 }
 .fade-enter {
   opacity 0
-  transform translate(0, 50%)
+  transform translate(0, 30px)
 }
 .fade-leave-to {
   opacity 0
-  transform translate(0, -50%)
+  // transform translate(0, -25%)
 }
 
 .box
@@ -59,9 +59,6 @@
       padding 0 20px
       .item-box
         margin 0 10px
-        @media screen and (min-width 380px) and (max-width 450px) {
-          min-width 150px
-        }
         text-align center
         .item
           position relative
@@ -127,20 +124,41 @@
             animation-fill-mode forwards
     .content-text
       position relative
+      display flex
+      justify-content center
       width 80%
       margin 30px auto 0 auto
       .content-item
         position absolute
         top 0
-        width 80%
-        padding 15px 10%
+        width 90%
+        padding 15px 20px
+        max-width 750px
         border-radius 3px
         background rgba(255,255,255,.1)
+        .list-box
+          max-width 300px
+          margin 0 auto
+          text-align left
+          .list
+            display flex
+            align-items center
+            padding 5px 0
+            font-size .8rem
+            line-height 20px
+          .list-icon
+            color #fff
+            width 20px
+            height 20px
+            padding 0 20px 0 0
+          .list-content
+            flex 1
+            // text-indent 2em
 </style>
 
 <template>
 <section class="box" :style="boxSty">
-  <div :style="{height: app.scrollWid > 450 ? '76px' : '50px'}"></div>
+  <div :style="{height: app.scrollWid > 450 ? '76px' : '10px'}"></div>
   <section class="content">
     <h3 class="content-title">我的信息</h3>
 
@@ -150,7 +168,7 @@
       :key="index+'_title'"
       v-for="(item, index) in app.infoArr">
         <div class="box-animate">
-          <svg class="icon item" 
+          <svg class="icon item"
           :id="item.id"
           @touchstart="mouseEnterFn"
           @mouseenter="mouseEnterFn"
@@ -171,7 +189,29 @@
         <article 
         v-if="whereIcon === item.id"
         class="content-item"
-        :class="item.id">{{item.title}}</article>
+        :class="item.id">
+          <div class="list-box">
+            <p 
+            v-for="(itemS, indexS) in item.content"
+            class="list">
+              <svg class="icon list-icon" 
+              v-if="itemS.icon"
+              aria-hidden="true">
+                <use :xlink:href="itemS.icon"></use>
+              </svg>
+              <span 
+              v-if="!itemS.href"
+              class="list-content">{{itemS.content}}</span>
+              <span
+              @click.stop="_goUrl(itemS.href)"
+              v-else 
+              style="text-decoration: underline; cursor: pointer;"
+              class="list-content">{{itemS.content}}</span>
+              <!-- @click.stop="!app.version.mobile ? _goUrl(itemS.href) : void 0"
+              @touchend.stop="_goUrl(itemS.href, true)" -->
+            </p>
+          </div>
+        </article>
       </transition>
     </section>
   </section>
@@ -205,6 +245,14 @@ export default class UserInfo extends Vue {
       width: this.app.scrollWid + 'px',
       height: this.app.scrollHei + 'px'
     }
+  }
+  _goUrl(url) {
+    window.open(url)
+    // if(mobile) {
+    //   console.log(url)
+    //   window.location.href = url
+    // } else {
+    //   window.open(url) }
   }
   mouseEnterFn(e) {
     e = e || window.event

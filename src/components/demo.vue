@@ -1,6 +1,6 @@
 <template>
 <section class="box" :style="boxSty">
-  <div :style="{height: app.scrollWid > 450 ? '76px' : '50px'}"></div>
+  <div :style="{height: app.scrollWid > 450 ? '76px' : '10px'}"></div>
 </section>
 </template>
 

@@ -1,6 +1,7 @@
 <template>
   <section class="wrap" id="wrap"
   @touchstart="touchstart"
+  @touchmove="touchmove"
   @touchend="touchend">
 
   <!-- 移动端，不做动画处理 -->
@@ -100,8 +101,8 @@ export default class Home extends Vue {
     }
   }
   touchstart(e) {
-    e = e || window.event
-    e.preventDefault ? e.preventDefault() : e.returnValue = false
+    // e = e || window.event
+    // e.preventDefault ? e.preventDefault() : e.returnValue = false
     this.touchStartY = e.changedTouches[0].pageY
   }
   touchend(e) {
@@ -113,6 +114,10 @@ export default class Home extends Vue {
       this._upData({ index: this.app.index + 1 })
     } else if(moveY > 30 && this.app.index > 0) {
       this._upData({ index: this.app.index - 1 }) }
+  }
+  touchmove(e) {
+    e = e || window.event
+    e.preventDefault ? e.preventDefault() : e.returnValue = false
   }
   _upData(data: any) {
     // 更新Vuex数据状态
