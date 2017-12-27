@@ -19,7 +19,6 @@ const getMobileInfo: any = () => {
     info: {
       userAgent: u, // 浏览器标识
       system: navigator.platform,
-      language: (navigator.language).toLowerCase(), // 检测浏览器语言
       trident: u.indexOf('Trident') > -1, // IE内核
       presto: u.indexOf('Presto') > -1, // opera内核
       webKit: u.indexOf('AppleWebKit') > -1, // 苹果、谷歌内核
