@@ -3,7 +3,7 @@
 .box
   overflow hidden
   background url(../static/img/overlay.png) #564871
-  background url(../static/img/overlay.png), linear-gradient(45deg, #246a68, #564871, #655361)
+  background url(../static/img/overlay.png), linear-gradient(45deg, #564871, #655361)
   .content
     text-align center
     .content-title
@@ -20,21 +20,20 @@
         width 100%
       skillBox() {
         position absolute
-        cursor pointer
         transition all ease-out 1s
         top 0
         width 65%
         padding 20px
         border-radius 3px
         text-align left
-        color #333
+        // color #333
       }
       .skill-box_0
         skillBox()
         transform translate(-50%, 0)
         z-index 10
         left 50%
-        background rgba(255,255,255,0.5)
+        background rgba(255,255,255,0.2)
         @media screen and (max-width 450px) {
           padding 10px 0 0 0
         }
@@ -43,18 +42,21 @@
         }
       .skill-box_1
         z-index 8
+        cursor pointer
         skillBox()
         transform translate(-95%, 0) scale(.8)
         left 100%
-        opacity 0.4
-        background rgba(255,255,255,0.3)
+        opacity 0.2
+        color #bcbcbc
+        background rgba(255,255,255,0.2)
       .skill-box_2
         skillBox()
+        cursor pointer
         z-index 9
         transform translate(-10%, 0) scale(.7)
         left 0
-        opacity 0.2
-        background rgba(255,255,255,0.3)
+        opacity 0.1
+        background rgba(255,255,255,0.2)
       .item
         margin 0 auto
         @media screen and (max-width 450px) {
@@ -124,7 +126,8 @@ export default class Skill extends Vue {
     }
   }
   className(index) {
-    const len = 3
+    const len = Object.keys(this.app.skill).length
+
     // [...Array(10).keys()] TS会转义错误
     let arr: Array<string> = Object.keys(Array(len + 1).join('.'))
     const lastArr: Array<string> = arr.splice(this.nowIndex)

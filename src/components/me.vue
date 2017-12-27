@@ -50,7 +50,7 @@ export default class Me extends Vue {
 .box
   overflow hidden
   background url(../static/img/overlay.png) #85505f
-  background url(../static/img/overlay.png), linear-gradient(45deg, #655361, #85505f, #8f454f)
+  background url(../static/img/overlay.png), linear-gradient(45deg, #655361, #85505f)
   .content
     text-align center
     @media screen and (max-width 450px)
