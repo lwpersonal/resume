@@ -112,7 +112,7 @@
           width 100%
           height 100%
           border-radius 50%
-          border 2.5px solid rgba(255,255,255,0.1)
+          border 1.5px solid rgba(255,255,255,0.1)
         .box-animate:hover
           .item
             transform scale(.95)
@@ -124,21 +124,27 @@
             animation-fill-mode forwards
     .content-text
       position relative
-      display flex
-      justify-content center
       width 80%
       margin 30px auto 0 auto
+      .content-item_box
+        position absolute
+        top 0
+        left 50%
+        transform translate(-50%, 0)
+        width 90%
+        max-width 750px
       .content-item
         position absolute
         top 0
-        width 90%
-        padding 15px 20px
-        max-width 750px
+        width 100%
+        margin 20px 0 0 0
+        padding 20px 0
         border-radius 3px
         background rgba(255,255,255,.1)
         .list-box
           max-width 300px
           margin 0 auto
+          padding 0 20px;
           text-align left
           .list
             display flex
@@ -182,37 +188,39 @@
     </section>
 
     <section class="content-text">
-      <transition 
-      name="fade"
-      :key="index+'_animted'"
-      v-for="(item, index) in app.infoArr">
-        <article 
-        v-if="whereIcon === item.id"
-        class="content-item"
-        :class="item.id">
-          <div class="list-box">
-            <p 
-            v-for="(itemS, indexS) in item.content"
-            class="list">
-              <svg class="icon list-icon" 
-              v-if="itemS.icon"
-              aria-hidden="true">
-                <use :xlink:href="itemS.icon"></use>
-              </svg>
-              <span 
-              v-if="!itemS.href"
-              class="list-content">{{itemS.content}}</span>
-              <span
-              @click.stop="_goUrl(itemS.href)"
-              v-else 
-              style="text-decoration: underline; cursor: pointer;"
-              class="list-content">{{itemS.content}}</span>
-              <!-- @click.stop="!app.version.mobile ? _goUrl(itemS.href) : void 0"
-              @touchend.stop="_goUrl(itemS.href, true)" -->
-            </p>
-          </div>
-        </article>
-      </transition>
+      <div class="content-item_box">
+        <transition 
+        name="fade"
+        :key="index+'_animted'"
+        v-for="(item, index) in app.infoArr">
+          <article 
+          v-if="whereIcon === item.id"
+          class="content-item"
+          :class="item.id">
+            <div class="list-box">
+              <p 
+              v-for="(itemS, indexS) in item.content"
+              class="list">
+                <svg class="icon list-icon" 
+                v-if="itemS.icon"
+                aria-hidden="true">
+                  <use :xlink:href="itemS.icon"></use>
+                </svg>
+                <span 
+                v-if="!itemS.href"
+                class="list-content">{{itemS.content}}</span>
+                <span
+                @click.stop="_goUrl(itemS.href)"
+                v-else 
+                style="text-decoration: underline; cursor: pointer;"
+                class="list-content">{{itemS.content}}</span>
+                <!-- @click.stop="!app.version.mobile ? _goUrl(itemS.href) : void 0"
+                @touchend.stop="_goUrl(itemS.href, true)" -->
+              </p>
+            </div>
+          </article>
+        </transition>
+      </div>
     </section>
   </section>
 </section>
