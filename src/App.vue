@@ -10,7 +10,7 @@
     <!-- 相对屏幕固定的元素 -->
     <section class="fixed-box">
       <my-top />
-      <my-nav v-if="app.scrollWid > 450"/>
+      <my-nav />
       <my-footer />
     </section>
     <!-- 路由渲染出口 -->
@@ -43,7 +43,7 @@ export default class App extends Vue {
   scrollFn: any = throttle(this.scroll, 30)
   // 钩子函数
   mounted () {
-    this._upData({ scrollWid: window.innerWidth, scrollHei: window.innerHeight, version: Version })
+    this._upData({ scrollWid: window.innerWidth, scrollHei: window.innerHeight })
     window.addEventListener('resize', this.resizeFn)
     window.addEventListener('mousewheel', this.scrollFn)
   }
