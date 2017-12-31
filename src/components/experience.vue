@@ -11,11 +11,9 @@
       padding 0 0 40px 0
     .item-box
       padding 0 10px
-      @media screen and (min-width 450px) {
-        width 700px
-        text-align left
-        line-height 25px
-      }
+      width 700px
+      text-align left
+      line-height 25px
       margin 0 auto
       .title
         display inline-block
@@ -24,9 +22,7 @@
       .time
         display inline-block
         padding 5px 0
-        @media screen and (min-width 450px) {
-          margin 0 0 0 30px
-        }
+        margin 0 0 0 30px
       .job
         display inline-block
         padding 10px 0
@@ -52,7 +48,7 @@
 
 <template>
 <section class="box" :style="boxSty">
-  <div :style="{height: app.scrollWid > 450 ? '76px' : '10px'}"></div>
+  <div style="height: 76px"></div>
   <section class="content">
     <h3 class="content-title">工作经历</h3>
     <section 

@@ -45,7 +45,7 @@
 
 <template>
 <section class="box" :style="boxSty">
-  <div :style="{height: app.scrollWid > 450 ? '76px' : '10px'}"></div>
+  <div style="height: 76px"></div>
 
   <section class="content">
     <h3 class="content-title">联系我</h3>

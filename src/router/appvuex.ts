@@ -20,14 +20,14 @@ export default {
       birthday: '1995-06-02',
       nation: '汉',
       jobIntension: 'Web 前端工程师',
-      more: 'w1521624684@163.com',
+      more: '17648253663@163.com',
       // 希望本是无所谓有，无所谓无的。这正如地上的路；
       title: '其实地上本没有路，走的人多了，也便成了路。'
     },
     moreInfo: {
       // 更多信息
       phone: 17648253663,
-      Email: 'w1521624684@163.com',
+      Email: '17648253663@163.com',
       blog: 'http://blog.csdn.net/qq_25243451',
       GitHub: 'https://github.com/lwpersonal'
     },
@@ -107,40 +107,47 @@ export default {
           '封装项目通用的组件，',
           '移动书城、PC网站维护更新'
         ],
-        result: '设计的网页作为公司移动端书城网站，一直运行在微信公众号内，现在正在推广阶段，已经有10000+的注册用户，日盈利稳定',
+        result: '设计的网页作为公司移动端书城网站，一直运行在微信公众号内，现在正在推广阶段，已经有30000+的注册用户，日盈利稳定',
         get: '工作期间得到大量的移动端Web经验，对组件化模块化有了深入理解'
       }
     ],
     demo: [
       {
         title: '移动书城重构',
-        time: '',
+        urlTitle: '项目链接',
         url: 'http://mobile.qczww.cn/view/QC@20170001/?#/',
-        demoUrl: 'mobile.qczww.cn/view/QC@20170001/?#/',
+        demoUrl: 'http://mobile.qczww.cn/view/QC@20170001/?#/',
         skill: 'Vue2 | TypeScript | Stylus | ESlint',
-        introduce: '此项目是基于第一版移动书城的升级重构网站，满足用户在移动端，其中以阅读功能最为复杂， 使用语义化标签， 用 ESlint 规范代码，增加代码质量和可维护性。网站将会投放于微信公众平台，替代原网站运行。',
-        myWork: '我负责此项目的软件分析设计、界面设计、网页制作、组件封装等工作'
+        introduce: '基于 Vue2 的 SPA 应用，是一个主要提供在线阅读功能的阅读交流网站。其中比较复杂的功能模块是阅读功能，使用 LocalStorage 本地存储用户的阅读习惯，用 Vue 的嵌套路由实现了可以用返回键关闭的章节列表侧滑页等。项目使用了 Vue2、Vuex、TypeScript、Stylus 等技术，使用语义化标签，ESlint 规范代码，增加代码质量，提高项目的可维护性和扩展性，以模块化组件化的开发方式构建网站。',
+        myWork: '我负责此项目的软件分析、界面设计、网页制作、通用组件编写等，独立完成项目。'
       },
       {
-        title: '移动书城重构',
-        time: '',
-        url: 'http://mobile.qczww.cn/view/QC@20170001/?#/',
-        condition: '第一版网站由于没有按照模块化设计，导致后期维护困难，难以添加新功能。所以使用MVVM模式重构网站。',
-        skill: 'Vue2 | TypeScript | Stylus | ESlint',
-        introduce: '此项目是基于第一版移动书城的升级重构网站，满足用户在移动端，其中以阅读功能最为复杂， 使用语义化标签， 用 ESlint 规范代码，增加代码质量和可维护性。网站将会投放于微信公众平台，替代原网站运行。',
-        myWork: '我负责此项目的软件分析设计、界面设计、网页制作、组件封装等工作'
+        title: '书城 App（Android）',
+        skill: 'React Native | Stylus',
+        introduce: '基于 React Native 的阅读 App，主要功能有图书的浏览搜索、评论、购买充值及较为复杂的图书阅读和离线阅读等。阅读模块包含了大量的用户交互，支持对阅读界面自定义更改、slider 快速选择章节、侧滑显示全部章节列表等。离线阅读使用了 AsyncStorage 存储数据，可以让用户在没有网络时阅读下载的图书。项目使用了 React Native，使用前端的方式开发 App，MobX 管理数据和状态，模块化组件化分割项目。',
+        myWork: '我负责 App 的软件设计、界面设计、代码编写、组件编写等。'
       },
+      {
+        title: '移动书城',
+        urlTitle: '项目链接',
+        url: 'http://mobile.qczww.cn/',
+        demoUrl: 'http://mobile.qczww.cn/',
+        skill: 'Zepto | Sass',
+        introduce: '这个项目是公司的第一版移动书城网站，是我刚接触前端时制作的，使用的技术较为简单，JavaScript + Zepto + Sass。基本功能为图书阅读、图书查询浏览、用户评论交流、用户充值消费等、满足用户在线阅读小说的全部需求。上线后一直运行在公司微信公众号内。',
+        myWork: '我负责此项目的软件分析、界面设计、网页制作等，独立完成项目。'
+      }
     ],
     contact: [
       { icon: '#icon-mmobilephone', content: 17648253663 },
-      { icon: '#icon-youxiang', content: 'w1521624684@163.com' },
+      { icon: '#icon-youxiang', content: '17648253663@163.com' },
       { icon: '#icon-youxiang', content: '1521624684@qq.com' },
       { icon: '#icon-hicon1', content: 1521624684 },
       { icon: '#icon-weixin', content: 'w1521624684' },
     ],
     other: [
-      { icon: '#icon-csdn', content: 'http://blog.csdn.net/qq_25243451' },
-      { icon: '#icon-github', content: 'https://github.com/lwpersonal' }
+      { icon: '#icon-csdn', content: 'http://blog.csdn.net/qq_25243451', title: 'CSDN' },
+      { icon: '#icon-github', content: 'https://github.com/lwpersonal', title: 'GitHub' },
+      { icon: '#icon-iconsf-copy', content: 'https://segmentfault.com/u/lwpersonal', title: 'SegmentFault' }
     ]
   },
   mutations: {

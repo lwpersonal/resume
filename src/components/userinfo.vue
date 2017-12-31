@@ -68,25 +68,13 @@
           padding 10px
           border-radius 50%
           background rgba(255,255,255,0.2)
-          @media screen and (max-width 680px) {
-            width 25px
-            height 25px
-          }
-          @media screen and (min-width 680px) {
-            width 60px
-            height 60px
-          }
+          width 60px
+          height 60px
         .box-animate
           position relative
           margin 20px auto 10px auto
-          @media screen and (max-width 680px) {
-            width 45px
-            height 45px
-          }
-          @media screen and (min-width 680px) {
-            width 80px
-            height 80px
-          }
+          width 80px
+          height 80px
         .box-animate::before
           content ''
           position absolute
@@ -164,7 +152,7 @@
 
 <template>
 <section class="box" :style="boxSty">
-  <div :style="{height: app.scrollWid > 450 ? '76px' : '10px'}"></div>
+  <div style="height: 76px"></div>
   <section class="content">
     <h3 class="content-title">我的信息</h3>
 

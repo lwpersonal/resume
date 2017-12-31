@@ -1,6 +1,6 @@
 <template>
 <section class="box" :style="boxSty">
-  <div :style="{height: app.scrollWid > 450 ? '76px' : '50px'}"></div>
+  <div style="height: 76px"></div>
   <section class="content">
     <img src="../static/img/me.png" class="my-img" />
     <h3 class="title">{{app.myInfo.title}}</h3>
@@ -53,20 +53,12 @@ export default class Me extends Vue {
   background url(../static/img/overlay.png), linear-gradient(45deg, #655361, #85505f)
   .content
     text-align center
-    @media screen and (max-width 450px)
-      .my-img
-        display block
-        width 100px
-        height 100px
-        margin 10px auto 0 auto
-        border-radius 50%
-    @media screen and (min-width 450px)
-      .my-img
-        display block
-        width 150px
-        height 150px
-        margin 30px auto 0 auto
-        border-radius 50%
+    .my-img
+      display block
+      width 150px
+      height 150px
+      margin 30px auto 0 auto
+      border-radius 50%
     .title
       margin 30px 0 0 0
       padding 20px

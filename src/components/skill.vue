@@ -10,41 +10,31 @@
       font-size 1.4rem
     .content-box
       margin 40px auto 0 auto
-      @media screen and (max-width 450px)
-        padding 15px 0
-      @media screen and (min-width 450px)
-        padding 15px 20px
-      // background rgba(255,255,255,0.1)
+      padding 15px 20px
       .skill-box
         position relative
         width 100%
       skillBox() {
         position absolute
-        transition all ease-out 1s
+        transition all ease-out .8s
         top 0
-        width 65%
+        width 750px
         padding 20px
         border-radius 3px
         text-align left
-        // color #333
       }
       .skill-box_0
         skillBox()
-        transform translate(-50%, 0)
+        transform translate(-375px, 0)
         z-index 10
         left 50%
         background rgba(255,255,255,0.2)
-        @media screen and (max-width 450px) {
-          padding 10px 0 0 0
-        }
-        @media screen and (min-width 450px) {
-          padding 30px 0 0 0
-        }
+        padding 30px 0 0 0
       .skill-box_1
         z-index 8
         cursor pointer
         skillBox()
-        transform translate(-95%, 0) scale(.8)
+        transform translate(-750px, 0) scale(.8)
         left 100%
         opacity 0.2
         color #bcbcbc
@@ -53,22 +43,15 @@
         skillBox()
         cursor pointer
         z-index 9
-        transform translate(-10%, 0) scale(.7)
+        transform translate(0, 0) scale(.7)
         left 0
         opacity 0.1
         background rgba(255,255,255,0.2)
       .item
         margin 0 auto
-        @media screen and (max-width 450px) {
-          width 90%
-          line-height 25px
-          padding 0 0 15px 0
-        }
-        @media screen and (min-width 450px) {
-          width 70%
-          line-height 30px
-          padding 0 0 30px 0
-        }
+        width 70%
+        line-height 30px
+        padding 0 0 30px 0
       .item-title
         font-size 1.3rem
       
@@ -76,7 +59,7 @@
 
 <template>
 <section class="box" :style="boxSty">
-  <div :style="{height: app.scrollWid > 450 ? '76px' : '10px'}"></div>
+  <div style="height: 76px"></div>
   <section class="content">
     <h3 class="content-title">技能栈</h3>
     <div class="content-box">
@@ -99,7 +82,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import { Prop } from 'vue-property-decorator'
 
 @Component({
   components: {
@@ -111,7 +93,6 @@ import { Prop } from 'vue-property-decorator'
 export default class Skill extends Vue {
   app: any = this.$store.state.AppVuex
   nowIndex: number = 0
-  @Prop()
 
   created () {
   }
