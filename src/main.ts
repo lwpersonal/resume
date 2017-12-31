@@ -10,8 +10,6 @@ Vue.config.productionTip = false
 import '../src/static/iconfont/iconfont.js'
 // 默认css样式
 import './../src/static/css/defaultStyle.css'
-// 响应式布局，使用js动态改变html=>font-size大小
-// import './common/flexible'
 
 // 轮播图
 import VueAwesomeSwiper from 'vue-awesome-swiper'
