@@ -25,7 +25,7 @@
       }
       .skill-box_0
         skillBox()
-        transform translate(-375px, 0)
+        transform translate(-375px, 0) scale(1)
         z-index 10
         left 50%
         background rgba(255,255,255,0.2)
