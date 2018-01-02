@@ -23,7 +23,6 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 import store from './router/vuex'
 import { throttle } from 'lodash'
-import Version from './common/version'
 
 import Nav from './components/nav.vue'
 import Top from './components/top.vue'
@@ -39,8 +38,8 @@ import Footer from './components/footer.vue'
 })
 export default class App extends Vue {
   app: any = this.$store.state.AppVuex
-  resizeFn: any = throttle(this.resize, 30)
-  scrollFn: any = throttle(this.scroll, 30)
+  resizeFn: any = throttle(this.resize, 50)
+  scrollFn: any = throttle(this.scroll, 50)
   // 钩子函数
   mounted () {
     this._upData({ scrollWid: window.innerWidth, scrollHei: window.innerHeight })
